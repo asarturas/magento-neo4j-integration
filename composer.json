@@ -1,0 +1,31 @@
+{
+  "name": "asarturas/magento-neo4j-integration",
+  "type": "magento-module",
+  "require": {
+    "magento-hackathon/magento-composer-installer": "^3.0",
+    "inviqa/magento-symfony-container": "^0.6",
+    "inviqa/symfony-container-generator": "^0.3"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "^2.4",
+    "behat/behat": "^3.0",
+    "magetest/magento-behat-extension": "dev-feature/Behat3",
+    "ctasca/magefix": "^1.5"
+  },
+  "extra": {
+    "magento-root-dir": "public"
+  },
+  "repositories": {
+    "magento": {
+      "type": "composer",
+      "url": "https://packages.magento.com"
+    },
+    "magefix": {
+      "type": "vcs",
+      "url": "https://github.com/ctasca/magefix.git"
+    }
+  },
+  "config": {
+    "bin-dir": "bin"
+  }
+}
