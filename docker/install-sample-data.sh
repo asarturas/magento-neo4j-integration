@@ -2,7 +2,7 @@
 
 cd sample-data
 if [ ! -f magento-sample-data-1.9.1.0.tar.gz ]; then
-    wget http://netix.dl.sourceforge.net/project/mageloads/assets/1.9.1.0/magento-sample-data-1.9.1.0.tar.gz
+    curl -o magento-sample-data-1.9.1.0.tar.gz http://netix.dl.sourceforge.net/project/mageloads/assets/1.9.1.0/magento-sample-data-1.9.1.0.tar.gz
 fi
 if [ ! -d magento-sample-data-1.9.1.0 ]; then
     tar -xvzf magento-sample-data-1.9.1.0.tar.gz

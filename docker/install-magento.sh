@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mysql -u$DBUSERNAME -p$DBPASSWORD -h$DBHOST -e "create database $DBNAME"
+
 cd public
 n98-magerun install \
     --magentoVersion=magento-mirror-1.9.1.0 \
