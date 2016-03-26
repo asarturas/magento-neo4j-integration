@@ -18,6 +18,7 @@ app:
   image: php:5.5-fpm
   links:
     - db
+    - neo4j
   ports:
     - "9000:9000"
   volumes:
@@ -36,3 +37,5 @@ db:
     - MYSQL_DATABASE=app
   volumes:
     - "./docker/mysql-data:/shared-mysql-data"
+neo4j:
+  image: neo4j
