@@ -19,6 +19,7 @@ app:
   links:
     - db
     - neo4j
+    - selenium
   ports:
     - "9000:9000"
   volumes:
@@ -39,3 +40,7 @@ db:
     - "./docker/mysql-data:/shared-mysql-data"
 neo4j:
   image: neo4j
+selenium:
+  image: selenium/standalone-chrome
+  ports:
+    - "4444:4444"

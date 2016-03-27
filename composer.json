@@ -9,6 +9,7 @@
   "require-dev": {
     "phpspec/phpspec": "^2.4",
     "behat/behat": "^3.0",
+    "sensiolabs/behat-page-object-extension": "~2.0",
     "magetest/magento-behat-extension": "dev-feature/Behat3",
     "ctasca/magefix": "^1.5"
   },
@@ -27,5 +28,7 @@
   },
   "config": {
     "bin-dir": "bin"
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
