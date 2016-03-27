@@ -1,5 +1,7 @@
 #!/bin/bash
 
-bash install-dependencies.sh
-bash install-magento.sh
-bash install-sample-data.sh
+SCRIPT=$(readlink -f $0)
+SCRIPTPATH=`dirname $SCRIPT`
+$SCRIPTPATH/install-dependencies.sh
+$SCRIPTPATH/install-magento.sh
+$SCRIPTPATH/install-sample-data.sh

@@ -9,7 +9,10 @@
   "require-dev": {
     "phpspec/phpspec": "^2.4",
     "behat/behat": "^3.0",
+    "behat/mink" : "1.6.*",
+    "behat/mink-selenium2-driver": "*",
     "sensiolabs/behat-page-object-extension": "~2.0",
+    "darsadow/behat-parameters-extension": "dev-master",
     "magetest/magento-behat-extension": "dev-feature/Behat3",
     "ctasca/magefix": "^1.5"
   },
@@ -28,6 +31,18 @@
   },
   "config": {
     "bin-dir": "bin"
+  },
+  "autoload": {
+    "psr-0": {
+      "":[
+        "public/app",
+        "public/lib",
+        "public/app/code/local",
+        "public/app/code/community",
+        "public/app/code/core",
+        "src"
+      ]
+    }
   },
   "minimum-stability": "dev",
   "prefer-stable": true

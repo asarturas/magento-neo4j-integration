@@ -1,17 +1,17 @@
 #!/bin/bash
 
-mysql -u$DBUSERNAME -p$DBPASSWORD -h$DBHOST -e "create database $DBNAME"
+mysql -uapp -papp -hdb -e "create database app"
 
 cd public
 n98-magerun install \
     --magentoVersion=magento-mirror-1.9.1.0 \
-    --installationFolder=. --dbHost=$DBHOST \
-    --dbUser=$DBUSERNAME \
-    --dbPass=$DBPASSWORD \
-    --dbName=$DBNAME \
+    --installationFolder=. --dbHost=db \
+    --dbUser=app \
+    --dbPass=app \
+    --dbName=app \
     --installSampleData=false \
     --useDefaultConfigParams=yes \
-    --baseUrl=http://$APPHOST
+    --baseUrl=http://magento-neo4j.local
 cd ..
 
 composer install
