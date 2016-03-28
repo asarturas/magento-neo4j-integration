@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Asarturas_Neo4j/>
+    </modules>
+    <default>
+        <asarturas_neo4j>
+            <config>
+                <url/>
+            </config>
+        </asarturas_neo4j>
+    </default>
+</config>

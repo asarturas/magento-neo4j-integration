@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <asarturas_neo4j translate="label" module="api">
+            <label>Neo4j Integration</label>
+            <tab>sales</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>900</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <config translate="label">
+                    <label>Neo4j Server Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <url translate="label">
+                            <label>URL</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </url>
+                    </fields>
+                </config>
+            </groups>
+        </asarturas_neo4j>
+    </sections>
+</config>

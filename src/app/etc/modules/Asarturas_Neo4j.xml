@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Asarturas_Neo4j>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Sales />
+            </depends>
+        </Asarturas_Neo4j>
+    </modules>
+</config>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <sales>
+                        <children>
+                            <config>
+                                <children>
+                                    <asarturas_neo4j translate="title" module="asarturas_neo4j">
+                                        <title>Neo4j Integration</title>
+                                    </asarturas_neo4j>
+                                </children>
+                            </config>
+                        </children>
+                    </sales>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
