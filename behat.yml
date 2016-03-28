@@ -1,0 +1,19 @@
+default:
+  extensions:
+    MageTest\MagentoExtension\Extension: ~
+    Behat\ParametersExtension\Extension:
+      parameters:
+        base_url: 'http://magento-neo4j.local'
+    Behat\MinkExtension:
+      base_url: 'http://magento-neo4j.local'
+      selenium2:
+        wd_host: 'http://selenium:4444/wd/hub/'
+        browser: chrome
+    SensioLabs\Behat\PageObjectExtension:
+      namespaces:
+        page: Asarturas\Pages\Page
+        element: Asarturas\Pages\Page\Element
+  suites:
+    default:
+      contexts:
+        - FeatureContext
