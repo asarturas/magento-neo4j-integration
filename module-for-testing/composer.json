@@ -1,5 +1,5 @@
 {
-  "name": "asarturas/magento-neo4j-integration",
+  "name": "asarturas/magento-neo4j-integration-for-testing",
   "type": "magento-module",
   "require": {
     "magento-hackathon/magento-composer-installer": "^3.0",

@@ -18,32 +18,38 @@ class Admin extends Page
 
     public function gotoConfig()
     {
-        /** @var NodeElement $topMenu */
-        foreach ($this->findAll('css', 'li.level0 > a > span') as $topMenu) {
-            if ($topMenu->getHtml() == 'System') {
-                $topMenu->getParent()->click();
-                /** @var NodeElement $menuLink */
-                foreach ($this->findAll('css', 'li.last a span') as $menuLink) {
-                    if ($menuLink->getHtml() == 'Configuration') {
-                        $menuLink->getParent()->click();
-                        return;
-                    }
-                }
+        $this->expandSystemSubmenu();
+        /** @var NodeElement $menuLink */
+        foreach ($this->findAll('css', 'li.last a span') as $menuLink) {
+            if ($menuLink->getHtml() == 'Configuration') {
+                $menuLink->getParent()->click();
+                return;
             }
         }
-
         throw new \Exception("Was not able to go to system configuration. \n\n" . $this->getHtml());
+    }
+
+    private function expandSystemSubmenu()
+    {
+        /** @var NodeElement $topMenu */
+        foreach ($this->findAll('css', 'li.level0 > a > span') as $topMenu) {
+            if (trim($topMenu->getHtml()) == 'System') {
+                $topMenu->getParent()->click();
+                return;
+            }
+        }
+        throw new \Exception("System submenu was not found. \n\n" . $this->getHtml());
     }
 
     public function openNeo4jIntegrationSettings()
     {
         /** @var NodeElement $item */
         foreach ($this->findAll('css', 'dd a span') as $item) {
-            if ($item->getHtml() == "Neo4j Integration") {
+            if (trim($item->getHtml()) == "Neo4j Integration") {
                 $item->getParent()->click();
                 return;
             }
         }
-        throw new \Exception("'Neo4j Integration' configuration space was not found.\n\n" . $this->getHtml());
+        throw new \Exception("'Neo4j Integration' configuration space was not found.\n\n");
     }
 }

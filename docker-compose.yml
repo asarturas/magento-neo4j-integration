@@ -19,12 +19,13 @@ services:
     ports:
       - "9000:9000"
     volumes:
-      - "./docker/php-config/php-fpm.conf:/etc/php5/fpm/php-fpm.conf"
-      - "./docker/php-config/www.conf:/etc/php5/fpm/pool.d/www.conf"
+      - "./docker/php-config:/shared-php-config"
+#      - "./docker/php-config/php-fpm.conf:/etc/php5/fpm/php-fpm.conf"
+#      - "./docker/php-config/www.conf:/etc/php5/fpm/pool.d/www.conf"
     volumes_from:
       - data
     working_dir: /var/www/app
-    entrypoint: ./start-app.sh
+    entrypoint: ./docker/start-app.sh
   server:
     image: nginx
     links:
