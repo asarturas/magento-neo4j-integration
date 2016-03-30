@@ -6,11 +6,12 @@ use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
+use MageTest\MagentoExtension\Context\MagentoContext;
 
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext implements Context, SnippetAcceptingContext
+class AdminContext extends MagentoContext implements Context, SnippetAcceptingContext
 {
     private $admin;
 
@@ -42,14 +43,17 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function submitMyNeojServerDetails()
     {
-        throw new PendingException();
+        $this->admin->fillInNeo4jServerDetails('neo4j', '7474', 'neo4j', 'neoneo');
+        $this->admin->saveSystemConfig();
     }
 
     /**
-     * @Then my neo4j server details are stored in database
+     * @Then my neo4j server details should be stored in database
      */
     public function myNeojServerDetailsAreStoredInDatabase()
     {
-        throw new PendingException();
+        if (!strpos($this->admin->getHtml(), 'The configuration has been saved.')) {
+            throw new Exception("Was not actually saved\n\n" .  $this->getHtml());
+        }
     }
 }

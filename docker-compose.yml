@@ -40,6 +40,8 @@ services:
     working_dir: /var/www/app
   neo4j:
     image: neo4j
+    ports:
+      - "7474:7474"
   selenium:
     image: selenium/standalone-chrome
     ports:

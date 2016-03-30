@@ -3,6 +3,7 @@
 namespace Asarturas\Pages\Page;
 
 use Behat\Mink\Element\NodeElement;
+use Exception;
 use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
 
 class Admin extends Page
@@ -51,5 +52,31 @@ class Admin extends Page
             }
         }
         throw new \Exception("'Neo4j Integration' configuration space was not found.\n\n");
+    }
+
+    public function fillInNeo4jServerDetails($host, $port, $username, $password)
+    {
+        if (!$this->find('css', '#asarturas_neo4j_config-head')) {
+            throw new Exception("Neo4j Config header was not found.\n\n" . $this->getHtml());
+        }
+        if (!$this->findField('asarturas_neo4j_config_host')->isVisible()) {
+            $this->find('css', '#asarturas_neo4j_config-head')->click();
+        }
+        $this->fillField('asarturas_neo4j_config_host', $host);
+        $this->fillField('asarturas_neo4j_config_port', $port);
+        $this->fillField('asarturas_neo4j_config_username', $username);
+        $this->fillField('asarturas_neo4j_config_password', $password);
+    }
+
+    public function saveSystemConfig()
+    {
+        /** @var NodeElement $buttonLabel */
+        foreach ($this->findAll('css', 'button.save > span > span > span') as $buttonLabel) {
+            if (trim($buttonLabel->getHtml()) == 'Save Config') {
+                $buttonLabel->getParent()->getParent()->getParent()->click();
+                return;
+            }
+        }
+        throw new Exception("Config submit button not found.\n\n" . $this->getHtml());
     }
 }

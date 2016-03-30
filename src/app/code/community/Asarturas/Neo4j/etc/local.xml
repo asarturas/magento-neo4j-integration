@@ -6,7 +6,10 @@
     <default>
         <asarturas_neo4j>
             <config>
-                <url/>
+                <host>localhost</host>
+                <port>7474</port>
+                <username>neo4j</username>
+                <password/>
             </config>
         </asarturas_neo4j>
     </default>

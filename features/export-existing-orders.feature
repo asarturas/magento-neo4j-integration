@@ -7,4 +7,4 @@ Feature: export existing orders
     Given I am logged in administrator
     When I go to neo4j integration configuration panel
     And submit my neo4j server details
-    Then my neo4j server details are stored in database
+    Then my neo4j server details should be stored in database

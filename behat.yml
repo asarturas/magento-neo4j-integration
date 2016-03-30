@@ -16,4 +16,4 @@ default:
   suites:
     default:
       contexts:
-        - FeatureContext
+        - AdminContext

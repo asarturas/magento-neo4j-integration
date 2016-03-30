@@ -9,6 +9,7 @@
   "require-dev": {
     "asarturas/magento-neo4j-integration-for-testing": "*",
     "phpspec/phpspec": "^2.4",
+    "bossa/phpspec2-expect": "*",
     "behat/behat": "^3.0",
     "behat/mink" : "1.6.*",
     "behat/mink-selenium2-driver": "*",
