@@ -12,21 +12,17 @@ services:
       - MYSQL_USER=app
       - MYSQL_PASSWORD=app
       - MYSQL_DATABASE=app
-    volumes:
-      - "./docker/mysql-data:/shared-mysql-data"
   app:
     image: php:5.5-fpm
     ports:
       - "9000:9000"
     volumes:
       - "./docker/php-config:/shared-php-config"
-#      - "./docker/php-config/php-fpm.conf:/etc/php5/fpm/php-fpm.conf"
-#      - "./docker/php-config/www.conf:/etc/php5/fpm/pool.d/www.conf"
     volumes_from:
       - data
     working_dir: /var/www/app
     entrypoint: ./docker/start-app.sh
-  server:
+  neo4j-integration.local:
     image: nginx
     links:
       - app
@@ -46,6 +42,3 @@ services:
     image: selenium/standalone-chrome
     ports:
       - "4444:4444"
-    volumes:
-      - "./docker/selenium/setup-host.sh:/setup-host.sh"
-    entrypoint: "/setup-host.sh"
