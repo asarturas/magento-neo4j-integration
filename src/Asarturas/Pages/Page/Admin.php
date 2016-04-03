@@ -13,7 +13,7 @@ class Admin extends Page
     public function login()
     {
         $this->fillField('login[username]', 'admin');
-        $this->fillField('login[password]', 'admin123123');
+        $this->fillField('login[password]', 'admin123');
         $this->find('css', '.form-button')->press();
     }
 
