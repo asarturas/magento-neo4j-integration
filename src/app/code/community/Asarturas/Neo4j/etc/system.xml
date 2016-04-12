@@ -50,6 +50,15 @@
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
                         </password>
+                        <orders translate="label">
+                            <label/>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>asarturas_neo4j/adminhtml_exportOrders</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </orders>
                     </fields>
                 </config>
             </groups>

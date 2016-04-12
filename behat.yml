@@ -1,6 +1,5 @@
 default:
   extensions:
-    MageTest\MagentoExtension\Extension: ~
     Behat\ParametersExtension\Extension:
       parameters:
         base_url: 'http://magento-neo4j'
@@ -14,6 +13,22 @@ default:
         page: Asarturas\Pages\Page
         element: Asarturas\Pages\Page\Element
   suites:
-    default:
+    domain:
+      contexts:
+        - DomainContext
+      filters:
+        tags: @domain
+    integration:
+      contexts:
+        - IntegrationContext:
+            - neo4j
+            - 7474
+            - neo4j
+            - neo4j2
+      filters:
+        tags: @integration
+    end2end:
       contexts:
         - AdminContext
+      filters:
+        tags: @end2end

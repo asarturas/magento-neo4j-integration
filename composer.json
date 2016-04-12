@@ -4,7 +4,9 @@
   "require": {
     "magento-hackathon/magento-composer-installer": "^3.0",
     "inviqa/magento-symfony-container": "^0.6",
-    "inviqa/symfony-container-generator": "^0.3"
+    "inviqa/symfony-container-generator": "^0.3",
+    "guzzlehttp/guzzle": "6",
+    "graphaware/neo4j-php-client": "^4.0"
   },
   "require-dev": {
     "asarturas/magento-neo4j-integration-for-testing": "*",
@@ -15,7 +17,6 @@
     "behat/mink-selenium2-driver": "*",
     "sensiolabs/behat-page-object-extension": "~2.0",
     "darsadow/behat-parameters-extension": "dev-master",
-    "magetest/magento-behat-extension": "dev-feature/Behat3",
     "ctasca/magefix": "^1.5"
   },
   "extra": {

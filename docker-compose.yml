@@ -21,10 +21,13 @@ services:
     image: asarturas/magento-php-fpm
     links:
       - db
+      - cache
     volumes_from:
       - data
     environment:
       - APP_HOSTNAME=magento-neo4j
+  cache:
+    image: redis:2
   data:
     image: debian
     volumes:

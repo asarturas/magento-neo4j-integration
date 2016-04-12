@@ -11,7 +11,7 @@ use MageTest\MagentoExtension\Context\MagentoContext;
 /**
  * Defines application features from the specific context.
  */
-class AdminContext extends MagentoContext implements Context, SnippetAcceptingContext
+class AdminContext implements Context, SnippetAcceptingContext
 {
     private $admin;
 
@@ -43,7 +43,7 @@ class AdminContext extends MagentoContext implements Context, SnippetAcceptingCo
      */
     public function submitMyNeojServerDetails()
     {
-        $this->admin->fillInNeo4jServerDetails('neo4j', '7474', 'neo4j', 'neoneo');
+        $this->admin->fillInNeo4jServerDetails('neo4j', '7474', 'neo4j', 'neo4j2');
         $this->admin->saveSystemConfig();
     }
 
@@ -53,7 +53,23 @@ class AdminContext extends MagentoContext implements Context, SnippetAcceptingCo
     public function myNeojServerDetailsAreStoredInDatabase()
     {
         if (!strpos($this->admin->getHtml(), 'The configuration has been saved.')) {
-            throw new Exception("Was not actually saved\n\n" .  $this->getHtml());
+            throw new Exception("Was not actually saved\n\n" .  $this->admin->getHtml());
         }
+    }
+
+    /**
+     * @When I choose to manually export all the existing orders
+     */
+    public function iChooseToManuallyExportAllTheExistingOrders()
+    {
+        $this->admin->exportOrdersManually();
+    }
+
+    /**
+     * @Then my existing orders should be exported to neo4j
+     */
+    public function myExistingOrdersShouldBeExportedToNeoj()
+    {
+        throw new PendingException();
     }
 }

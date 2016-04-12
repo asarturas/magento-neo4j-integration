@@ -1,0 +1,15 @@
+<?php
+/* var $this Asarturas_Neo4j_Block_Adminhtml_ExportOrders */
+?>
+
+<script type="text/javascript">
+    function exportAllOrders() {
+        window.location.href = "<?php echo $this->getExportOrdersUrl(); ?>";
+    }
+</script>
+
+<?php if ($this->isConfigured()): ?>
+    <?php echo $this->getButtonHtml(); ?>
+<?php else: ?>
+    <?php echo $this->__('Please save completed configuration in order to export.'); ?>
+<?php endif; ?>

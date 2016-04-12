@@ -1,14 +1,23 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Asarturas_Neo4j/>
+        <Asarturas_Neo4j>
+            <version>0.0.1</version>
+        </Asarturas_Neo4j>
     </modules>
+    <global>
+        <blocks>
+            <asarturas_neo4j>
+                <class>Asarturas_Neo4j_Block</class>
+            </asarturas_neo4j>
+        </blocks>
+    </global>
     <default>
         <asarturas_neo4j>
             <config>
                 <host>localhost</host>
                 <port>7474</port>
-                <username>neo4j</username>
+                <username/>
                 <password/>
             </config>
         </asarturas_neo4j>

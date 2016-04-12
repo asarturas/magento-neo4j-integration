@@ -79,4 +79,9 @@ class Admin extends Page
         }
         throw new Exception("Config submit button not found.\n\n" . $this->getHtml());
     }
+
+    public function exportOrdersManually()
+    {
+        $this->pressButton('export_all_orders_button');
+    }
 }

@@ -1,2 +1,3 @@
 src/app/code/community/Asarturas/* app/code/community/Asarturas
 src/app/etc/modules/Asarturas_Neo4j.xml app/etc/modules/Asarturas_Neo4j.xml
+src/app/design/adminhtml/default/default/template/asarturas_neo4j/* app/design/adminhtml/default/default/template/asarturas_neo4j
